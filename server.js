@@ -1,6 +1,8 @@
 const express = require("express");
 const app = express();
 
+app.use(express.json({ extended: false }));
+
 const bookmarks = [
   { title: "네이버", url: "naver.com", id: 1 },
   { title: "다음", url: "daum.net", id: 2 },
@@ -20,7 +22,7 @@ app.post("/", (req, res) => {
   };
 
   bookmarks.push(newbookmark);
-  res.status(200);
+  res.status(201);
   res.json(bookmarks);
 });
 

@@ -4,7 +4,7 @@ const Bookmarks = ({ bookmarks }) => {
   return (
     bookmarks &&
     bookmarks.map((bookmark) => (
-      <li>
+      <li key={bookmark.id}>
         {bookmark.title} ({bookmark.url})
       </li>
     ))

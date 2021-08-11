@@ -28,7 +28,7 @@ app.post("/", (req, res) => {
   res.json(bookmarks);
 });
 
-const port = 3001;
+const port = 3030;
 app.listen(port, () => {
   console.log(`run app at localhost:${port}`);
 });

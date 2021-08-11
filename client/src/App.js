@@ -13,7 +13,7 @@ function App() {
   useEffect(() => {
     // async/await를 이용한 방법
     const getBookmarks = async () => {
-      const res = await axios.get("http://localhost:3001");
+      const res = await axios.get("http://localhost:3030");
       setBookmarks(res.data);
     };
     getBookmarks();

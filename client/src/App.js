@@ -3,6 +3,7 @@ import axios from "axios";
 import "./App.css";
 import { async } from "rxjs";
 import Bookmarks from "./components/Bookmarks";
+import BookmarkItem from "./components/BookmarkItem";
 
 function App() {
   const [bookmarks, setBookmarks] = useState(null);
@@ -27,6 +28,7 @@ function App() {
       </form>
 
       <Bookmarks bookmarks={bookmarks} />
+      <BookmarkItem />
     </div>
   );
 }

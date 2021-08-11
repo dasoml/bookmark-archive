@@ -2,6 +2,7 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { async } from "rxjs";
+import AddBookmarkForm from "./components/AddBookmarkForm";
 import Bookmarks from "./components/Bookmarks";
 
 function App() {
@@ -20,11 +21,7 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <form>
-        <input type="text" placeholder="TITLE" />
-        <input type="text" placeholder="URL" />
-        <input type="submit" value="SAVE" />
-      </form>
+      <AddBookmarkForm />
       <Bookmarks bookmarks={bookmarks} />
     </div>
   );

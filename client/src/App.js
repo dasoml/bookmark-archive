@@ -3,7 +3,6 @@ import axios from "axios";
 import "./App.css";
 import { async } from "rxjs";
 import Bookmarks from "./components/Bookmarks";
-import BookmarkItem from "./components/BookmarkItem";
 
 function App() {
   const [bookmarks, setBookmarks] = useState(null);
@@ -26,9 +25,7 @@ function App() {
         <input type="text" placeholder="URL" />
         <input type="submit" value="SAVE" />
       </form>
-
       <Bookmarks bookmarks={bookmarks} />
-      <BookmarkItem />
     </div>
   );
 }

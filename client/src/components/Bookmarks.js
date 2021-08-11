@@ -1,12 +1,11 @@
 import React from "react";
+import BookmarkItem from "./BookmarkItem";
 
 const Bookmarks = ({ bookmarks }) => {
   return (
     bookmarks &&
     bookmarks.map((bookmark) => (
-      <li key={bookmark.id}>
-        {bookmark.title} ({bookmark.url})
-      </li>
+      <BookmarkItem key={bookmark.id} bookmark={bookmark} />
     ))
   );
 };

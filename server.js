@@ -13,6 +13,8 @@ const bookmarks = [
 
 app.get("/", (req, res) => {
   res.status(200);
+  console.log(req.url);
+
   res.json(bookmarks);
 });
 
@@ -28,7 +30,7 @@ app.post("/", (req, res) => {
   res.json(bookmarks);
 });
 
-const port = 3030;
+const port = 3001;
 app.listen(port, () => {
   console.log(`run app at localhost:${port}`);
 });

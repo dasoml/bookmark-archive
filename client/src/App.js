@@ -20,11 +20,22 @@ function App() {
     };
     getBookmarks();
   }, []);
+
+  const createBookmark = async (bookmarktitle, bookmarkurl, bookmarkid) => {
+    const res = await axios.post("http://localhost:3001", {
+      title: bookmarktitle,
+      url: bookmarkurl,
+      id: bookmarkid,
+    });
+    setBookmarks(res.data);
+    console.log(res.data);
+  };
+
   return (
     <div className="App">
       <div className="container">
         <Header />
-        <BookmarkInput />
+        <BookmarkInput createBookmark={createBookmark} />
         <Bookmarks bookmarks={bookmarks} />
       </div>
     </div>

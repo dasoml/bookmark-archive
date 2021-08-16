@@ -13,7 +13,6 @@ const bookmarks = [
 
 app.get("/", (req, res) => {
   res.status(200);
-  console.log(req.url);
 
   res.json(bookmarks);
 });

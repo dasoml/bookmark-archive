@@ -1,12 +1,14 @@
 import React, { useRef } from "react";
 
-const BookmarkInput = () => {
+const BookmarkInput = ({ createBookmark }) => {
   const bookmarkTitle = useRef("");
   const bookmarkUrl = useRef("");
+
   const handleSubmit = (e) => {
     e.preventDefault();
-    console.log(bookmarkTitle.current.value);
-    console.log(bookmarkUrl.current.value);
+    createBookmark(bookmarkTitle.current.value, bookmarkUrl.current.value);
+    bookmarkTitle.current.value = "";
+    bookmarkUrl.current.value = "";
   };
   return (
     <form onSubmit={handleSubmit}>

@@ -1,7 +1,6 @@
 import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
-import { async } from "rxjs";
 import Header from "./components/Header";
 import BookmarkInput from "./components/BookmarkInput";
 import Bookmarks from "./components/Bookmarks";
@@ -21,11 +20,10 @@ function App() {
     getBookmarks();
   }, []);
 
-  const createBookmark = async (bookmarktitle, bookmarkurl, bookmarkid) => {
+  const createBookmark = async (bookmarktitle, bookmarkurl) => {
     const res = await axios.post("http://localhost:3001", {
       title: bookmarktitle,
       url: bookmarkurl,
-      id: bookmarkid,
     });
     setBookmarks(res.data);
     console.log(res.data);

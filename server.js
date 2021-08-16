@@ -21,7 +21,6 @@ app.post("/", (req, res) => {
   const newbookmark = {
     title: req.body.title,
     url: req.body.url,
-    id: req.body.id,
   };
 
   bookmarks.push(newbookmark);

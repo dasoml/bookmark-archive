@@ -2,7 +2,8 @@ import { useState, useEffect } from "react";
 import axios from "axios";
 import "./App.css";
 import { async } from "rxjs";
-import AddBookmarkForm from "./components/AddBookmarkForm";
+import Header from "./components/Header";
+import BookmarkInput from "./components/BookmarkInput";
 import Bookmarks from "./components/Bookmarks";
 
 function App() {
@@ -21,8 +22,11 @@ function App() {
   }, []);
   return (
     <div className="App">
-      <AddBookmarkForm />
-      <Bookmarks bookmarks={bookmarks} />
+      <div className="container">
+        <Header />
+        <BookmarkInput />
+        <Bookmarks bookmarks={bookmarks} />
+      </div>
     </div>
   );
 }

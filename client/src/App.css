@@ -1,0 +1,19 @@
+.container {
+  max-width: 600px;
+  background-color: #daf2f7;
+  text-align: center;
+  padding: 40px;
+  margin: 40px auto;
+  border-radius: 30px;
+}
+
+h1 {
+  color: #347deb;
+}
+
+input {
+  border: 1px solid lightgray;
+  height: 20px;
+  border-radius: 5px;
+  font-size: 12px;
+}

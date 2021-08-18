@@ -21,12 +21,11 @@ function App() {
   }, []);
 
   const createBookmark = async (bookmarktitle, bookmarkurl) => {
-    const res = await axios.post("http://localhost:3001", {
+    const res = await axios.post("http://localhost:3001/add", {
       title: bookmarktitle,
       url: bookmarkurl,
     });
     setBookmarks(res.data);
-    console.log(res.data);
   };
 
   return (

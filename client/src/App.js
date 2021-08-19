@@ -3,7 +3,7 @@ import axios from "axios";
 import "./App.css";
 import Header from "./components/Header";
 import BookmarkInput from "./components/BookmarkInput";
-import Bookmarks from "./components/Bookmarks";
+import BookmarkList from "./components/BookmarkList";
 
 function App() {
   const [bookmarks, setBookmarks] = useState(null);
@@ -28,12 +28,20 @@ function App() {
     setBookmarks(res.data);
   };
 
+  const deleteBookmark = async (id) => {
+    const res = await axios.post("http://localhost:3001/delete", {
+      id: id,
+    });
+    setBookmarks(res.data);
+    console.log(res.data);
+  };
+
   return (
     <div className="App">
       <div className="container">
         <Header />
         <BookmarkInput createBookmark={createBookmark} />
-        <Bookmarks bookmarks={bookmarks} />
+        <BookmarkList bookmarks={bookmarks} deleteBookmark={deleteBookmark} />
       </div>
     </div>
   );
